@@ -1,0 +1,16 @@
+{% extends 'ventas/base.html' %} {% block title %}Mis Boletos{% endblock %} {%
+block content %}
+<h1>Mis Boletos</h1>
+<ul>
+  {% for boleto in boletos %}
+  <li>
+    Nombre del Pasajero: {{ boleto.nombre_pasajero }} <br />
+    Ruta: {{ boleto.horario.ruta }} <br />
+    Hora de Salida: {{ boleto.horario.hora_salida }} <br />
+    Fecha de Compra: {{ boleto.fecha_venta }}
+  </li>
+  {% empty %}
+  <li>No has comprado boletos aún.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

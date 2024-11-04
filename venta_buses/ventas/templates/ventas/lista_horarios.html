@@ -1,0 +1,12 @@
+{% extends 'ventas/base.html' %} {% block title %}Lista de Horarios{% endblock%}
+{% block content %}
+<h1>Horarios de Buses</h1>
+<ul>
+  {% for horario in horarios %}
+  <li>
+    Ruta: {{ horario.ruta }} - Salida: {{ horario.hora_salida }}
+    <a href="{% url 'vender_boleto' horario.id %}">Comprar Boleto</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

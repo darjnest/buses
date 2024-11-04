@@ -1,0 +1,6 @@
+{% extends 'ventas/base.html' %} {% block title %}Página Principal{% endblock %}
+{% block content %}
+<h1>Bienvenido a la Venta de Boletos de Buses</h1>
+<p>Explora nuestros horarios de buses y compra tus boletos en línea.</p>
+<a href="{% url 'lista_horarios' %}">Ver Horarios</a>
+{% endblock %}
