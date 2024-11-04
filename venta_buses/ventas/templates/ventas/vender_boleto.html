@@ -1,0 +1,10 @@
+{% extends 'ventas/base.html' %} {% block title %}Compra de Boleto{% endblock %}
+{% block content %}
+<h1>Compra de Boleto</h1>
+<p>Ruta: {{ horario.ruta }}</p>
+<p>Hora de Salida: {{ horario.hora_salida }}</p>
+<form method="POST">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">Comprar</button>
+</form>
+{% endblock %}

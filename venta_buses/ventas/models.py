@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Ruta(models.Model):
@@ -33,6 +34,7 @@ class Boleto(models.Model):
     fecha_venta = models.DateField(auto_now_add=True)
     nombre_pasajero = models.CharField(max_length=100)
     documento_identidad = models.CharField(max_length=20)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"Boleto para {self.nombre_pasajero} en {self.bus}"
